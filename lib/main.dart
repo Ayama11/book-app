@@ -1,4 +1,7 @@
+import 'package:bookapp/constes.dart';
+import 'package:bookapp/features/presntions/views/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const BookApp());
@@ -9,6 +12,9 @@ class BookApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return GetMaterialApp(
+      theme: ThemeData().copyWith(scaffoldBackgroundColor: kPrimaryColor),
+      home: const SplashView(),
+    );
   }
 }
