@@ -1,3 +1,5 @@
+import 'package:bookapp/Feature/home/presentions/views/home_view.dart';
+import 'package:bookapp/constes.dart';
 import 'package:bookapp/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,9 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     initSilidingAnimation();
 
-    Future.delayed(const Duration(seconds: 2), () {
-      // Get.to(()=> );
-    });
+    getToHome();
   }
 
   @override
@@ -64,5 +64,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
             .animate(animationController);
 
     animationController.forward();
+  }
+
+  void getToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.leftToRightWithFade,
+          duration: kTransitionDuration);
+    });
   }
 }
