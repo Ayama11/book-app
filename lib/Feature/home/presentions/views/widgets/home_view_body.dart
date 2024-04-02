@@ -1,4 +1,5 @@
 import 'package:bookapp/Feature/home/presentions/views/widgets/best_seller_listview.dart';
+import 'package:bookapp/constes.dart';
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -10,20 +11,34 @@ class BodyHomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppBarCustom(),
-          FeaturdBookListView(),
-          SizedBox(height: 50),
-          Text('Best Sellery', style: Styles.textStyle18),
-          SizedBox(height: 20),
-          BestSellerListView()
-        ],
-      ),
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: kPadding30,
+                child: AppBarCustom(),
+              ),
+              FeaturdBookListView(),
+              SizedBox(height: 50),
+              Padding(
+                padding: kPadding30,
+                child: Text('Best Sellery', style: Styles.textStyle18),
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
+        SliverFillRemaining(
+            child: Padding(
+          padding: kPadding30,
+          child: BestSellerListView(),
+        ))
+      ],
     );
+
+    
   }
 }
-
