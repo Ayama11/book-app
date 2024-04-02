@@ -1,3 +1,4 @@
+import 'package:bookapp/constes.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
@@ -7,6 +8,11 @@ abstract class Styles {
   static const textStyle20 = TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 20,
+  );
+
+  static const textStyle21 = TextStyle(
+    fontSize: 20,
+    fontFamily: kRowdiesFont,
   );
 
   static const textStyle30 = TextStyle(

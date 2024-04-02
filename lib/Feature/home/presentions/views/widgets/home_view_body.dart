@@ -19,7 +19,8 @@ class BodyHomeView extends StatelessWidget {
           FeaturdBookListView(),
           SizedBox(height: 50),
           Text('Best Sellery', style: Styles.textStyle18),
-          BestSellerListViewItem()
+          SizedBox(height: 20),
+          BestSellerListViewItem(),
         ],
       ),
     );
@@ -44,6 +45,20 @@ class BestSellerListViewItem extends StatelessWidget {
                   image: const DecorationImage(
                       fit: BoxFit.fill, image: AssetImage(AssetsData.test))),
             ),
+          ),
+          const SizedBox(width: 30),
+          Column(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .5,
+                child: const Text(
+                  'Herry potr and got fire',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.textStyle21,
+                ),
+              )
+            ],
           )
         ],
       ),
