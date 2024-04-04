@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'similer_book_listview.dart';
+
 class BookDetilesView extends StatelessWidget {
   const BookDetilesView({super.key});
 
@@ -46,7 +48,11 @@ class BookDetilesView extends StatelessWidget {
           const SizedBox(height: 16),
           const BookRate(mainAxisAlignment: MainAxisAlignment.center),
           const SizedBox(height: 36),
-          const ActionButton()
+          const ActionButton(),
+          const SizedBox(height: 40),
+          const Text('Similer you can see', style: Styles.textStyle18),
+          const SizedBox(height: 20),
+          const SimilerBookListView()
         ]),
       ),
     );

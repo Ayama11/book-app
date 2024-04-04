@@ -21,6 +21,7 @@ class ButtonCoustom extends StatelessWidget {
       height: 50,
       child: TextButton(
         style: TextButton.styleFrom(
+            elevation: 5,
             backgroundColor: backColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12))),
