@@ -1,3 +1,4 @@
+import 'package:bookapp/Feature/home/presentions/views/widgets/action_button.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/app_bar_w.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/book_rate.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/custom_book_item.dart';
@@ -42,12 +43,10 @@ class BookDetilesView extends StatelessWidget {
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
             ),
           ),
-          const SizedBox(
-            height: 16,
-          ),
-          const BookRate(
-            mainAxisAlignment: MainAxisAlignment.center,
-          )
+          const SizedBox(height: 16),
+          const BookRate(mainAxisAlignment: MainAxisAlignment.center),
+          const SizedBox(height: 36),
+          const ActionButton()
         ]),
       ),
     );
