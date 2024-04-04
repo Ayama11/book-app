@@ -1,8 +1,8 @@
 import 'package:bookapp/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class FeaturdItemListView extends StatelessWidget {
-  const FeaturdItemListView({super.key});
+class CustomBookItem extends StatelessWidget {
+  const CustomBookItem({super.key});
 
   @override
   Widget build(BuildContext context) {
