@@ -6,16 +6,13 @@ class TextFieldCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-      child: TextField(
-        decoration: InputDecoration(
-          hintText: 'Search',
-          suffixIcon: IconButton(
-              onPressed: () {}, icon: const Icon(Iconsax.search_normal)),
-          enabledBorder: outLineInputBorder(),
-          focusedBorder: outLineInputBorder(),
-        ),
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'Search',
+        suffixIcon: IconButton(
+            onPressed: () {}, icon: const Icon(Iconsax.search_normal)),
+        enabledBorder: outLineInputBorder(),
+        focusedBorder: outLineInputBorder(),
       ),
     );
   }
