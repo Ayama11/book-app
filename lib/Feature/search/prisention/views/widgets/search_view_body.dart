@@ -1,7 +1,6 @@
 import 'package:bookapp/Feature/search/prisention/views/widgets/textfield_custom.dart';
 import 'package:bookapp/constes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../../core/utils/styles.dart';
 import '../../../../home/presentions/views/widgets/best_seller_listview_item.dart';

@@ -20,7 +20,6 @@ class BookApp extends StatelessWidget {
         scaffoldBackgroundColor: kPrimaryColor,
         //  textTheme: GoogleFonts.montagaTextTheme(ThemeData.dark().textTheme),
       ),
-      
     );
   }
 }
