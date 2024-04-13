@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:ffi';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -15,7 +12,7 @@ class FeuturedBookCubit extends Cubit<FeuturedBookState> {
   final HomeRepo homeRepo;
 
   Future<void> featchFeaturedBooks() async {
-    var result = await homeRepo.fetchFeaturedBooks();
+    var result = await homeRepo.fetchNewestBooks();
     result.fold((failure) {
       emit(FeuturedBookFailure(failure.errMessage));
     }, (book) {
