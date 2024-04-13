@@ -8,3 +8,17 @@ sealed class FeuturedBookState extends Equatable {
 }
 
 final class FeuturedBookInitial extends FeuturedBookState {}
+
+final class FeuturedBookLoading extends FeuturedBookState {}
+
+final class FeuturedBookSuccess extends FeuturedBookState {
+  final List<Book> books;
+
+  const FeuturedBookSuccess(this.books);
+}
+
+final class FeuturedBookFailure extends FeuturedBookState {
+  final String errMesage;
+
+  const FeuturedBookFailure(this.errMesage);
+}
