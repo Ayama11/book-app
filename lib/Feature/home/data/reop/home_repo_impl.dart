@@ -9,7 +9,7 @@ import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final Api api;
-  HomeRepoImpl({required this.api});
+  HomeRepoImpl(this.api);
   @override
   Future<Either<Failure, List<Book>>> fetchNewsBooks() async {
     try {
