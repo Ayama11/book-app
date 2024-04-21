@@ -11,11 +11,13 @@ class HomeRepoImpl implements HomeRepo {
   final Api api;
   HomeRepoImpl(this.api);
   @override
-  Future<Either<Failure, List<Book>>> fetchNewsBooks() async {
+  Future<Either<Failure, List<Book>>> fetchBooks() async {
     try {
       var data = await api.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest');
+              'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest'
+          //  'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest'
+          );
       List<Book> books = [];
       for (var item in data['items']) {
         books.add(Book.fromJson(item));

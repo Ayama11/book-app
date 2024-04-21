@@ -12,11 +12,11 @@ class FeuturedBookCubit extends Cubit<FeuturedBookState> {
   final HomeRepo homeRepo;
 
   Future<void> featchFeaturedBooks() async {
-    var result = await homeRepo.fetchNewestBooks();
+    var result = await homeRepo.fetchBooks();
     result.fold((failure) {
       emit(FeuturedBookFailure(failure.errMessage));
-    }, (book) {
-      emit(FeuturedBookSuccess(book));
+    }, (books) {
+      emit(FeuturedBookSuccess(books));
     });
   }
 }

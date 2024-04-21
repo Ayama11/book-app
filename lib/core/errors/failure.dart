@@ -36,9 +36,9 @@ class ServiecesFailure extends Failure {
     }
   }
 
-  factory ServiecesFailure.fromResponse(int statusCode, dynamic respones) {
+  factory ServiecesFailure.fromResponse(dynamic statusCode, dynamic respones) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServiecesFailure(respones['error']['message']);
+      return ServiecesFailure(statusCode.toString());
     } else if (statusCode == 500) {
       return ServiecesFailure('INternal server Error , Please try later');
     } else if (statusCode == 404) {

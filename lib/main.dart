@@ -22,7 +22,8 @@ class BookApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => FeuturedBookCubit(getIt.get<HomeRepoImpl>())),
+            create: (context) => FeuturedBookCubit(getIt.get<HomeRepoImpl>())
+              ..featchFeaturedBooks()),
         BlocProvider(
             create: (context) => NewestBookCubit(getIt.get<HomeRepoImpl>()))
       ],
