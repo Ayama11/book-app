@@ -14,7 +14,7 @@ class BookDetilesSection extends StatelessWidget {
     return Column(children: [
       Padding(
         padding: EdgeInsets.symmetric(horizontal: width * .2),
-        child: const CustomBookItem(
+        child: const CustomBookImage(
           imageUrl: '',
         ),
       ),
@@ -30,7 +30,11 @@ class BookDetilesSection extends StatelessWidget {
         ),
       ),
       const SizedBox(height: 16),
-      const BookRate(mainAxisAlignment: MainAxisAlignment.center),
+      const BookRate(
+        mainAxisAlignment: MainAxisAlignment.center,
+        rateing: '',
+        count: 1,
+      ),
       const SizedBox(height: 24),
       const ActionButton()
     ]);

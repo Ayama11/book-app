@@ -1,4 +1,6 @@
+import 'package:bookapp/Feature/home/data/models/book/book.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/book_rate.dart';
+import 'package:bookapp/Feature/home/presentions/views/widgets/custom_book_item.dart';
 import 'package:bookapp/core/utils/app_router.dart';
 import 'package:bookapp/core/utils/assets.dart';
 import 'package:bookapp/core/utils/styles.dart';
@@ -6,8 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+  const BestSellerListViewItem({super.key, required this.book});
 
+  final Book book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,16 +21,7 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 130,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.4 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.amber,
-                    image: const DecorationImage(
-                        fit: BoxFit.fill, image: AssetImage(AssetsData.test))),
-              ),
-            ),
+            CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -35,25 +29,28 @@ class BestSellerListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
-                    child: const Text(
-                      'Herry potr and got fire',
+                    child: Text(
+                      book.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle21,
                     ),
                   ),
                   const SizedBox(height: 3),
-                  const Text('J.K. Rorwing', style: Styles.textStyle14),
+                  Text(book.volumeInfo.authors![0], style: Styles.textStyle14),
                   const SizedBox(height: 3),
                   Row(
                     children: [
                       Text(
-                        '19.9 @',
+                        'Free',
                         style: Styles.textStyle18
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
-                      const BookRate()
+                      BookRate(
+                        rateing: book.volumeInfo.maturityRating ?? '0',
+                        count: book.volumeInfo.pageCount ?? 0,
+                      )
                     ],
                   ),
                 ],
