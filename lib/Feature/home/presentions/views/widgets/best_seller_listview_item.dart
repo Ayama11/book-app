@@ -2,7 +2,6 @@ import 'package:bookapp/Feature/home/data/models/book/book.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/book_rate.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/custom_book_item.dart';
 import 'package:bookapp/core/utils/app_router.dart';
-import 'package:bookapp/core/utils/assets.dart';
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

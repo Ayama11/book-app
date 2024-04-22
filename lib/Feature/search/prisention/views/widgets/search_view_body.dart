@@ -3,7 +3,6 @@ import 'package:bookapp/constes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
-import '../../../../home/presentions/views/widgets/best_seller_listview_item.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
