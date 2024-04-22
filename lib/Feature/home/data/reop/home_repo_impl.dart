@@ -14,8 +14,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<Book>>> fetchBooks() async {
     try {
       var data = await api.get(
-          endPoint:
-              'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest'
+          endPoint: 'volumes?Filtering=free-ebooks&q=subject:flutter'
           //  'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest'
           );
       List<Book> books = [];
@@ -35,7 +34,12 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<Book>>> fetchNewestBooks() async {
     try {
       var data = await api.get(
-          endPoint: 'volumes?Filtering=free-ebooks&q=subject:flutter');
+          endPoint:
+              'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest'
+
+          // 'volumes?Filtering=free-ebooks&q=subject:flutter'
+
+          );
       List<Book> books = [];
       for (var item in data['items']) {
         books.add(Book.fromJson(item));

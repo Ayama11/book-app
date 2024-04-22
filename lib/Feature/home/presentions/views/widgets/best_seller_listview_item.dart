@@ -20,7 +20,8 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 130,
         child: Row(
           children: [
-            CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
+            CustomBookImage(
+                imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -47,7 +48,8 @@ class BestSellerListViewItem extends StatelessWidget {
                       ),
                       const Spacer(),
                       BookRate(
-                        rateing: book.volumeInfo.maturityRating ?? '0',
+                        rateing: '0',
+                        //   book.volumeInfo.maturityRating ?? '0',
                         count: book.volumeInfo.pageCount ?? 0,
                       )
                     ],
