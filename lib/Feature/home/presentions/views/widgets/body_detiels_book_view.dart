@@ -1,3 +1,4 @@
+import 'package:bookapp/Feature/home/data/models/book/book.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/section_book_detiles.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/section_similer_book.dart';
 import 'package:bookapp/constes.dart';
@@ -8,8 +9,9 @@ import 'package:iconsax/iconsax.dart';
 import 'app_bar_w.dart';
 
 class DetilesBookBody extends StatelessWidget {
-  const DetilesBookBody({super.key});
+  const DetilesBookBody({super.key, required this.book});
 
+  final Book book;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -31,7 +33,9 @@ class DetilesBookBody extends StatelessWidget {
                         icon: const Icon(Iconsax.shopping_bag))
                   ]),
               const SizedBox(height: 20),
-              const BookDetilesSection(),
+              BookDetilesSection(
+                book: book,
+              ),
               const Expanded(child: SizedBox(height: 24)),
               const SectionSimilerBookListView(),
               const SizedBox(height: 46),
