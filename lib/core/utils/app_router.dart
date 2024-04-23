@@ -1,3 +1,4 @@
+import 'package:bookapp/Feature/home/data/models/book/book.dart';
 import 'package:bookapp/Feature/home/data/reop/home_repo_impl.dart';
 import 'package:bookapp/Feature/home/presentions/views/home_view.dart';
 import 'package:bookapp/Feature/home/presentions/views/widgets/book_detiles_view.dart';
@@ -26,7 +27,9 @@ abstract class AppRouter {
         path: kBookDetilesView,
         builder: (context, state) => BlocProvider(
           create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
-          child: const BookDetilesView(),
+          child: BookDetilesView(
+            book: state.extra as Book,
+          ),
         ),
       ),
       GoRoute(
