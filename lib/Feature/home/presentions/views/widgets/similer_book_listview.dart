@@ -1,9 +1,11 @@
 import 'package:bookapp/Feature/home/presentions/views/widgets/custom_book_item.dart';
 import 'package:bookapp/Feature/splash/prisention/manger/similer_books_cuibt/similar_books_cubit.dart';
+import 'package:bookapp/core/utils/app_router.dart';
 import 'package:bookapp/core/widgets/custom_errmessage.dart';
 import 'package:bookapp/core/widgets/custom_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SimilerBookListView extends StatelessWidget {
   const SimilerBookListView({super.key});
@@ -19,10 +21,18 @@ class SimilerBookListView extends StatelessWidget {
               itemCount: state.book.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6),
-                  child: CustomBookImage(
-                    imageUrl: '',
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.kBookDetilesView,
+                          extra: state.book[index]);
+                    },
+                    child: CustomBookImage(
+                      imageUrl:
+                          state.book[index].volumeInfo.imageLinks?.thumbnail ??
+                              '',
+                    ),
                   ),
                 );
               },
