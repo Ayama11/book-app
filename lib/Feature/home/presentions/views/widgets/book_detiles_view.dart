@@ -15,8 +15,8 @@ class BookDetilesView extends StatefulWidget {
 class _BookDetilesViewState extends State<BookDetilesView> {
   @override
   void initState() {
-    BlocProvider.of<SimilarBooksCubit>(context)
-        .featchSimilarBooks(category: widget.book.volumeInfo.categories![0]);
+    BlocProvider.of<SimilarBooksCubit>(context).featchSimilarBooks(
+        category: widget.book.volumeInfo.categories?[0] ?? 'fddd');
     super.initState();
   }
 
