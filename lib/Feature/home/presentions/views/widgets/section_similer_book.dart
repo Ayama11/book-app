@@ -10,7 +10,7 @@ class SectionSimilerBookListView extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Similer you can see', style: Styles.textStyle16),
+        Text('Similer you can see', style: Styles.textStyle18),
         SizedBox(height: 24),
         SimilerBookListView()
       ],

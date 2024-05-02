@@ -7,7 +7,7 @@ import 'package:bookapp/core/utils/services_locater.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-//import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   setUpServiceLocater();
@@ -33,7 +33,7 @@ class BookApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
-          //  textTheme: GoogleFonts.montagaTextTheme(ThemeData.dark().textTheme),
+          textTheme: GoogleFonts.montagaTextTheme(ThemeData.dark().textTheme),
         ),
       ),
     );

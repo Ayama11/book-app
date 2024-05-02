@@ -33,7 +33,7 @@ class BestSellerListViewItem extends StatelessWidget {
                       book.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: Styles.textStyle21,
+                      style: Styles.textStyle30,
                     ),
                   ),
                   const SizedBox(height: 3),
@@ -43,7 +43,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     children: [
                       Text(
                         'Free',
-                        style: Styles.textStyle18
+                        style: Styles.textStyle14
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),

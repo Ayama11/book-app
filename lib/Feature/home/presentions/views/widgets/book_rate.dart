@@ -17,14 +17,14 @@ class BookRate extends StatelessWidget {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       children: [
+        Text(rateing, style: Styles.textStyle14),
+        const SizedBox(width: 4),
         const Icon(
           Iconsax.star1,
           color: Color(0xffFFDD4F),
           size: 26,
         ),
-        const SizedBox(width: 6),
-        Text(rateing, style: Styles.textStyle16),
-        const SizedBox(width: 6),
+        const SizedBox(width: 8),
         Opacity(
           opacity: .5,
           child: Text('($count)', style: Styles.textStyle14),

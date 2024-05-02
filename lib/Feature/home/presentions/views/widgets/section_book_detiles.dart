@@ -31,7 +31,7 @@ class BookDetilesSection extends StatelessWidget {
         opacity: .7,
         child: Text(
           book.volumeInfo.authors![0],
-          style: Styles.textStyle18.copyWith(
+          style: Styles.textStyle16.copyWith(
               fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
         ),
       ),
