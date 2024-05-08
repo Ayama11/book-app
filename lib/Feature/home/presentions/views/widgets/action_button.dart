@@ -2,7 +2,6 @@ import 'package:bookapp/Feature/home/data/models/book/book.dart';
 import 'package:bookapp/constes.dart';
 import 'package:bookapp/core/utils/function/launcher_url.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/widgets/button_custom.dart';
 
